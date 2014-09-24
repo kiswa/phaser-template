@@ -25,7 +25,6 @@ MyGame.Init.prototype = {
         if (!this.game.device.desktop) {
             this.scale.forceOrientation(true, false); // Landscape
             //this.scale.forceOrientation(false, true); // Portrait
-            this.scale.setResizeCallback(this.gameResized, this);
             this.scale.enterIncorrectOrientation.add(this.enterIncorrectOrientation, this);
             this.scale.leaveIncorrectOrientation(this.leaveIncorrectOrientation, this);
         }
