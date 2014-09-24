@@ -1,0 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #222;
+}
+canvas {
+    border: 1px solid #666;
+    border-radius: 7px;
+}
