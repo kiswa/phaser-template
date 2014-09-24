@@ -1,26 +1,27 @@
 // This state loads all the game assets while displaying
 // "Loading..." text and a loading bar to show progress.
-MyGame.Loader = function() {};
+MyGame.Loader = function(game) {
+    this.ready = false;
+};
 
 MyGame.Loader.prototype = {
     preload: function() {
         var fontStyle = {
                 font: '18px Arial',
                 fill: '#80cde8'
-            },
-            lbCenter = {
-                x: (this.game.width / 2) - 175, // Game center minus half loading bar width
-                y: (this.game.height / 2) - 16 // Game center minus half loading bar height
             };
 
         // Images loaded by MyGame.Init
-        this.add.sprite(lbCenter.x, lbCenter.y, 'loadingBarBg');
-        this.loadingBar = this.add.sprite(lbCenter.x, lbCenter.y, 'loadingBar');
+        this.loadingBarBg = this.add.sprite(this.world.centerX, this.world.centerY, 'loadingBarBg');
+        this.loadingBarBg.anchor.setTo(0.5, 0.5);
+        this.loadingBar = this.add.sprite(this.world.centerX, this.world.centerY, 'loadingBar');
         this.loadingBar.tint = 0x80cde8; // Make your loading bar any color!
+        this.loadingBar.anchor.setTo(0.5, 0.5);
         this.load.setPreloadSprite(this.loadingBar);
 
-        // Changing the fontStyle will require adjustments to the location here.
-        this.add.text(lbCenter.x + 140, lbCenter.y - 25, "Loading...", fontStyle);
+        // Changing the fontStyle will require adjustment to the location here.
+        this.loadingText = this.add.text(this.world.centerX, this.world.centerY-30, "Loading...", fontStyle);
+        this.loadingText.anchor.setTo(0.5, 0.5);
 
         // Load assets here.
 
@@ -34,7 +35,14 @@ MyGame.Loader.prototype = {
     },
 
     create: function() {
-        // Go straight to next game state (MainMenu, Play, etc.).
-        // this.state.start('NextState');
+        this.loadingBar.cropEnabled = false;
+    },
+
+    update: function() {
+        // Make sure audio is decoded before moving on to the next state.
+        //if (this.cache.isSoundDecoded('yourAudio') && this.ready === false) {
+        //    this.ready = true;
+        //    this.state.start('MainMenu');
+        //}
     }
 };

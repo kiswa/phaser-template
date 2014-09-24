@@ -33,7 +33,7 @@ MyGame.Init.prototype = {
     },
 
     preload: function() {
-        // Load images to be used in Loader state.
+        // Load images for use in Loader state.
         this.load.image('loadingBar', 'assets/images/loading-bar.png');
         this.load.image('loadingBarBg', 'assets/images/loading-bar-bg.png');
     },
