@@ -14,9 +14,12 @@ MyGame.Loader.prototype = {
         // Images loaded by MyGame.Init
         this.loadingBarBg = this.add.sprite(this.world.centerX, this.world.centerY, 'loadingBarBg');
         this.loadingBarBg.anchor.setTo(0.5, 0.5);
-        this.loadingBar = this.add.sprite(this.world.centerX, this.world.centerY, 'loadingBar');
+        // Left to right loading bar
+        this.loadingBar = this.add.sprite(this.world.centerX - 175, this.world.centerY - 16, 'loadingBar');
+        // Center to outsides loading bar.
+        //this.loadingBar = this.add.sprite(this.world.centerX, this.world.centerY, 'loadingBar');
+        //this.loadingBar.anchor.setTo(0.5, 0.5);
         this.loadingBar.tint = 0x80cde8; // Make your loading bar any color!
-        this.loadingBar.anchor.setTo(0.5, 0.5);
         this.load.setPreloadSprite(this.loadingBar);
 
         // Changing the fontStyle will require adjustment to the location here.
