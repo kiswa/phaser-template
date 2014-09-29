@@ -1,15 +1,9 @@
-// The 'namespace' for the game.
-var MyGame = {
-    // Set anything that needs to be accesible across states here.
-    isOriented: false
-};
+// Load or create the 'namespace' for the game.
+var MyGame = MyGame || {};
 
 // This state loads the assets for the loading bar and sets
 // some options, then loads the game state that preloads game assets.
-MyGame.Init = function(game) {
-    game.state.add('Loader', MyGame.Loader);
-    // Add additional states here.
-};
+MyGame.Init = function() {};
 
 MyGame.Init.prototype = {
     init: function() {

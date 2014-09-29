@@ -1,3 +1,6 @@
+// Load or create the 'namespace' for the game.
+var MyGame = MyGame || {};
+
 // This state loads all the game assets while displaying
 // "Loading..." text and a loading bar to show progress.
 MyGame.Loader = function(game) {
