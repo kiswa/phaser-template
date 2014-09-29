@@ -10,7 +10,7 @@ MyGame.Loader = function(game) {
 MyGame.Loader.prototype = {
     preload: function() {
         var fontStyle = {
-                font: '18px Arial',
+                font: '18px Walter Turncoat',
                 fill: '#80cde8'
             };
 
