@@ -11,23 +11,20 @@ MyGame.Loader.prototype = {
     preload: function() {
         var fontStyle = {
                 font: '18px Walter Turncoat',
-                fill: '#80cde8'
+                fill: '#7edcfc'
             };
 
-        // Images loaded by MyGame.Init
-        this.loadingBarBg = this.add.sprite(this.world.centerX, this.world.centerY, 'loadingBarBg');
-        this.loadingBarBg.anchor.setTo(0.5, 0.5);
-        // Left to right loading bar
-        this.loadingBar = this.add.sprite(this.world.centerX - 175, this.world.centerY - 16, 'loadingBar');
-        // Center to outsides loading bar.
-        //this.loadingBar = this.add.sprite(this.world.centerX, this.world.centerY, 'loadingBar');
-        //this.loadingBar.anchor.setTo(0.5, 0.5);
-        this.loadingBar.tint = 0x80cde8; // Make your loading bar any color!
-        this.load.setPreloadSprite(this.loadingBar);
+        // A somewhat contrived example of using objects.
+        this.loadingBar = new LoadingBar(this.game);
+        this.load.setPreloadSprite(this.loadingBar.bar);
 
         // Changing the fontStyle will require adjustment to the location here.
         this.loadingText = this.add.text(this.world.centerX, this.world.centerY-30, "Loading...", fontStyle);
         this.loadingText.anchor.setTo(0.5, 0.5);
+
+        // Make your loading bar any color!
+        this.loadingBar.background.tint = 0x7edcfc;
+        this.loadingBar.bar.tint = 0xdcfc7e;
 
         // Load assets here.
 
@@ -41,7 +38,7 @@ MyGame.Loader.prototype = {
     },
 
     create: function() {
-        this.loadingBar.cropEnabled = false;
+        this.loadingBar.bar.cropEnabled = false;
     },
 
     update: function() {

@@ -12,4 +12,6 @@ This template assumes States are used. `Init` and `Loader` States are provided a
 
 `Init` sets some properties for the Phaser environment and preloads a webfont and images for the loading screen. `Loader` then loads the remaining assets for a game while using the previously loaded font and images to display a loading bar.
 
-Additional states must have their JavaScript files included in `index.html` and their State added to `main.js`
+Additional states must have their JavaScript files included in `index.html` and their State added to `main.js`.
+
+The template also encourages the use of objects within states. See the `js\objs\loadingBar.js` and `js\loader.js` for an example.
