@@ -42,6 +42,9 @@ MyGame.Init.prototype = {
         // Load images for use in Loader state.
         this.load.image('loadingBar', 'assets/images/loading-bar.png');
         this.load.image('loadingBarBg', 'assets/images/loading-bar-bg.png');
+
+        // Load object script for LoadingBar.
+        this.load.script('loadingBarObj', 'js/objs/loadingBar.js');
     },
 
     update: function() {

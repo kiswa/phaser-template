@@ -26,7 +26,7 @@ MyGame.Loader.prototype = {
         this.loadingBar.background.tint = 0x7edcfc;
         this.loadingBar.bar.tint = 0xdcfc7e;
 
-        // Load assets here.
+        // Load assets and game object scripts here.
 
         // DELETE --
         // Just to show that the loading bar works.
