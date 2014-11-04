@@ -1,4 +1,4 @@
-var LoadingBar = function(game, parent, color) {
+var LoadingBar = function(game, parent) {
     Phaser.Group.call(this, game, parent);
 
     // Images loaded by MyGame.Init
