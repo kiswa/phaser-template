@@ -1,51 +1,57 @@
-// Load or create the 'namespace' for the game.
-var MyGame = MyGame || {};
+(function() {
+    "use strict";
 
-// This state loads all the game assets while displaying
-// "Loading..." text and a loading bar to show progress.
-MyGame.Loader = function(game) {
-    this.ready = false;
-};
+    // Load or create the 'namespace' for the game.
+    var MyGame = window.MyGame || {};
 
-MyGame.Loader.prototype = {
-    preload: function() {
-        var fontStyle = {
-                font: '18px Walter Turncoat',
-                fill: '#7edcfc'
-            };
+    // This state loads all the game assets while displaying
+    // "Loading..." text and a loading bar to show progress.
+    MyGame.Loader = function(game) {
+        this.ready = false;
+    };
 
-        // A somewhat contrived example of using objects.
-        this.loadingBar = new LoadingBar(this.game);
-        this.load.setPreloadSprite(this.loadingBar.bar);
+    MyGame.Loader.prototype = {
+        preload: function() {
+            var fontStyle = {
+                    font: '18px Walter Turncoat',
+                    fill: '#7edcfc'
+                };
 
-        // Changing the fontStyle will require adjustment to the location here.
-        this.loadingText = this.add.text(this.world.centerX, this.world.centerY-30, "Loading...", fontStyle);
-        this.loadingText.anchor.setTo(0.5, 0.5);
+            // A somewhat contrived example of using objects.
+            this.loadingBar = new MyGame.LoadingBar(this.game);
+            this.load.setPreloadSprite(this.loadingBar.bar);
 
-        // Make your loading bar any color!
-        this.loadingBar.background.tint = 0x7edcfc;
-        this.loadingBar.bar.tint = 0xdcfc7e;
+            // Changing the fontStyle will require adjustment to the location here.
+            this.loadingText = this.add.text(this.world.centerX, this.world.centerY-30, "Loading...", fontStyle);
+            this.loadingText.anchor.setTo(0.5, 0.5);
 
-        // Load assets and game object scripts here.
+            // Make your loading bar any color!
+            this.loadingBar.background.tint = 0x7edcfc;
+            this.loadingBar.bar.tint = 0xdcfc7e;
 
-        // DELETE --
-        // Just to show that the loading bar works.
-        var i = 2500;
-        while (i--) {
-            this.load.image('image' + i, 'assets/images/loading-bar.png');
-        };
-        // -- DELETE
-    },
+            // Load assets and game object scripts here.
 
-    create: function() {
-        this.loadingBar.bar.cropEnabled = false;
-    },
+            // DELETE --
+            // Just to show that the loading bar works.
+            var i = 2500;
+            while (i--) {
+                this.load.image('image' + i, 'assets/images/loading-bar.png');
+            }
+            // -- DELETE
+        },
 
-    update: function() {
-        // Make sure audio is decoded before moving on to the next state.
-        //if (this.cache.isSoundDecoded('yourAudio') && this.ready === false) {
-        //    this.ready = true;
-        //    this.state.start('MainMenu');
-        //}
-    }
-};
+        create: function() {
+            this.loadingBar.bar.cropEnabled = false;
+        },
+
+        update: function() {
+            // Make sure audio is decoded before moving on to the next state.
+            //if (this.cache.isSoundDecoded('yourAudio') && this.ready === false) {
+            //    this.ready = true;
+            //    this.state.start('MainMenu');
+            //}
+        }
+    };
+
+    window.MyGame = MyGame;
+})();
