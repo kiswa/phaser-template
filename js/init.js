@@ -1,9 +1,7 @@
-(function() {
+;(function(MyGame, undefined) {
     "use strict";
 
-    // Load or create the 'namespace' for the game.
-    var MyGame = window.MyGame || {};
-        // Create the object for webfont.js to use.
+    // Create the object for webfont.js to use.
     window.WebFontConfig = {
             active: function() {
                     MyGame.Init.prototype.fontLoaded = true;
@@ -67,6 +65,4 @@
             // Get back to the game!
         }
     };
-
-    window.MyGame = MyGame;
-})();
+})(window.MyGame = window.MyGame || {});

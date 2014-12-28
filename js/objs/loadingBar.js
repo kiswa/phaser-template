@@ -1,8 +1,5 @@
-(function() {
+;(function(MyGame, undefined) {
     "use strict";
-
-    // Load or create the 'namespace' for the game.
-    var MyGame = window.MyGame || {};
 
     MyGame.LoadingBar = function(game, parent) {
         Phaser.Group.call(this, game, parent);
@@ -22,4 +19,4 @@
 
     MyGame.LoadingBar.prototype = Object.create(Phaser.Group.prototype);
     MyGame.LoadingBar.prototype.constructor = MyGame.LoadingBar;
-})();
+})(window.MyGame = window.MyGame || {});

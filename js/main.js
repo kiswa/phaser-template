@@ -1,8 +1,5 @@
-(function() {
+;(function(MyGame, undefined) {
     "use strict";
-
-    // Load or create the 'namespace' for the game.
-    var MyGame = window.MyGame || {};
 
     // Create the Phaser game instance.
     MyGame.game = new Phaser.Game(800, 600, Phaser.AUTO);
@@ -17,5 +14,4 @@
 
     // Start the first state.
     MyGame.game.state.start('Init');
-    window.MyGame = MyGame;
-})();
+})(window.MyGame = window.MyGame || {});
