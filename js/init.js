@@ -32,7 +32,6 @@
                 this.scale.enterIncorrectOrientation.add(this.enterIncorrectOrientation, this);
                 this.scale.leaveIncorrectOrientation(this.leaveIncorrectOrientation, this);
             }
-            this.scale.setScreenSize(true);
             this.scale.refresh();
         },
 
