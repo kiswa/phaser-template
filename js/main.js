@@ -1,5 +1,5 @@
-;(function(MyGame, undefined) {
-    "use strict";
+(function(MyGame, undefined) {
+    'use strict';
 
     // Create the Phaser game instance.
     MyGame.game = new Phaser.Game(800, 600, Phaser.AUTO);
@@ -14,4 +14,4 @@
 
     // Start the first state.
     MyGame.game.state.start('Init');
-})(window.MyGame = window.MyGame || {});
+})(MyGame);

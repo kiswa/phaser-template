@@ -1,5 +1,8 @@
-;(function(MyGame, undefined) {
-    "use strict";
+// Global 'namespace' for the game.
+var MyGame = {};
+
+(function(MyGame, undefined) {
+    'use strict';
 
     // Create the object for webfont.js to use.
     window.WebFontConfig = {
@@ -65,4 +68,4 @@
             // Get back to the game!
         }
     };
-})(window.MyGame = window.MyGame || {});
+})(MyGame);

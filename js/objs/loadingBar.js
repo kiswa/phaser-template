@@ -1,5 +1,5 @@
-;(function(MyGame, undefined) {
-    "use strict";
+(function(MyGame, undefined) {
+    'use strict';
 
     MyGame.LoadingBar = function(game, parent) {
         Phaser.Group.call(this, game, parent);
@@ -19,4 +19,4 @@
 
     MyGame.LoadingBar.prototype = Object.create(Phaser.Group.prototype);
     MyGame.LoadingBar.prototype.constructor = MyGame.LoadingBar;
-})(window.MyGame = window.MyGame || {});
+})(MyGame);

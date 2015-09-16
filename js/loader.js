@@ -1,5 +1,5 @@
-;(function(MyGame, undefined) {
-    "use strict";
+(function(MyGame, undefined) {
+    'use strict';
 
     // This state loads all the game assets while displaying
     // "Loading..." text and a loading bar to show progress.
@@ -19,7 +19,7 @@
             this.load.setPreloadSprite(this.loadingBar.bar);
 
             // Changing the fontStyle will require adjustment to the location here.
-            this.loadingText = this.add.text(this.world.centerX, this.world.centerY-30, "Loading...", fontStyle);
+            this.loadingText = this.add.text(this.world.centerX, this.world.centerY-30, 'Loading...', fontStyle);
             this.loadingText.anchor.setTo(0.5, 0.5);
 
             // Make your loading bar any color!
@@ -41,4 +41,4 @@
             //}
         }
     };
-})(window.MyGame = window.MyGame || {});
+})(MyGame);
