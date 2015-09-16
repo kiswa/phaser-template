@@ -3,17 +3,17 @@
 
     // Create the object for webfont.js to use.
     window.WebFontConfig = {
-            active: function() {
-                    MyGame.Init.prototype.fontLoaded = true;
-            },
-            google: {
-                families: ['Walter Turncoat']
-            }
-        };
+        active: function() {
+            MyGame.Init.prototype.fontLoaded = true;
+        },
+        google: {
+            families: ['Walter Turncoat']
+        }
+    };
 
     // This state loads the assets for the loading bar and sets
     // some options, then loads the game state that preloads game assets.
-    MyGame.Init = function() {};
+    MyGame.Init = function(game) {};
 
     MyGame.Init.prototype = {
         init: function() {
@@ -26,11 +26,12 @@
             this.scale.setMinMax(400, 300, 800, 600); // Adjust to your game dimensions
             this.scale.pageAlignHorizontally = true;
             this.scale.pageAlignVertically = true;
+
             if (!this.game.device.desktop) {
                 this.scale.forceOrientation(true, false); // Landscape
                 //this.scale.forceOrientation(false, true); // Portrait
                 this.scale.enterIncorrectOrientation.add(this.enterIncorrectOrientation, this);
-                this.scale.leaveIncorrectOrientation(this.leaveIncorrectOrientation, this);
+                this.scale.leaveIncorrectOrientation.add(this.leaveIncorrectOrientation, this);
             }
             this.scale.refresh();
         },
@@ -48,7 +49,7 @@
         },
 
         update: function() {
-            // Go straight to Loader state.
+            // Go straight to Loader state after font loads.
             if (this.fontLoaded) {
                 this.state.start('Loader');
             }
