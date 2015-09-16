@@ -27,14 +27,6 @@
             this.loadingBar.bar.tint = 0xdcfc7e;
 
             // Load assets and game object scripts here.
-
-            // DELETE --
-            // Just to show that the loading bar works.
-            var i = 2500;
-            while (i--) {
-                this.load.image('image' + i, 'assets/images/loading-bar.png');
-            }
-            // -- DELETE
         },
 
         create: function() {
