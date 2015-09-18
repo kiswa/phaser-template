@@ -8,10 +8,8 @@
     MyGame.isOriented = false;
 
     // Add states.
-    MyGame.game.state.add('Init', MyGame.Init);
+    MyGame.game.state.add('Init', MyGame.Init, true); // Auto start this state
     MyGame.game.state.add('Loader', MyGame.Loader);
     // Add additional states here.
 
-    // Start the first state.
-    MyGame.game.state.start('Init');
 })(MyGame);
