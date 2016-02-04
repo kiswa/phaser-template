@@ -1,0 +1,33 @@
+{
+  "name": "phaser-template",
+  "version": "0.1.0",
+  "description": "A template for creating Phaser games, using Gulp and npm.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kiswa/phaser-template.git"
+  },
+  "keywords": [
+    "phaser",
+    "template",
+    "gulp",
+    "starter"
+  ],
+  "author": "Matthew Ross <root@matthewross.me> (http://matthewross.me)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kiswa/phaser-template/issues"
+  },
+  "homepage": "https://github.com/kiswa/phaser-template#readme",
+  "devDependencies": {
+    "del": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-jshint": "^2.0.0",
+    "jshint": "^2.9.1",
+    "jshint-stylish": "^2.1.0",
+    "phaser": "^2.4.4"
+  }
+}
