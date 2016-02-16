@@ -12,7 +12,7 @@ Getting Started
 
 Clone the repository where you want, enter that directory, then run `npm install` to install the dependencies.
 
-To build the `dist` output directory, run the `gulp` command. You may also run `gulp watch` in a terminal to update the ouput any time a file changes.
+To build the `dist` output directory, run the `gulp` command. You may also run `gulp watch` in a terminal to update the output any time a file changes.
 
 Notes
 -----
